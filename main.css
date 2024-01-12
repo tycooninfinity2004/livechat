@@ -1,0 +1,405 @@
+#layer {
+    position:fixed;
+    width:100%;
+    height:100%;
+    background: black;
+    color:black;
+    top:0%;
+    left:0%;
+    justify-content: center;
+    align-items: center;
+    
+}
+.popup .covercap {
+    
+    margin-top:50%;
+    margin-left:15%;
+    width:70%;
+    height:25%;
+    background:whitesmoke;
+}
+
+a {
+    text-decoration:none;
+}
+#header {
+    position:fixed;
+    bottom:0%;
+    width:100%;
+    height:7%;
+    background:green;
+    left:0%;
+}
+#home {
+    position:fixed;
+    left:10%;
+    font-size:25px;
+    bottom:1%;
+}
+#message {
+    position:fixed;
+    left:45%;
+    bottom:1%;
+    font-size:25px;
+    
+}
+#payment {
+    position:fixed;
+    left:80%;
+    bottom:1%;
+    font-size:25px;
+}
+
+
+
+
+
+
+
+
+    h3 {
+        front-size:15px;
+        font-family:monospace;
+    
+    }
+    #login {
+        padding:20px;
+        margin:50px;
+        outline:none;
+        border:none;
+        background:orange;
+    }
+    input {
+        width:80%;
+     font-family:monospace;;
+        padding:8px;
+        outline:none;
+        border:none;
+        margin:10px;
+    }
+    #button {
+        background:green;
+        color: White;
+        font-family:monospace;
+        outline:none;
+        border:none;
+        width:80%;
+        height:30px;
+        margin:20px;
+        justify-content:center;
+        align-items:center;
+    }
+.form-container {
+  width: 300px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #f4f4f4;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.loginform-container {
+  width: 100%;
+  height:100%;
+  left:0%;
+  position:fixed;
+  top:0%;
+  background: white;
+  border-radius: 0px;
+  text-align: center;  
+}
+#error {
+    font-family:monospace;
+    color: red;
+    font-weight:bold;
+    font-size:15px;
+}
+
+#correct {
+    font-family:monospace;
+    color:#001781;
+    font-weight:bold;
+    font-size:15px;
+}
+a {
+    text-decoration:none;
+}
+#correctbtn  {
+    font-family:monospace;
+    color:white;
+    background: orange;
+    width:50%;
+    height:20px;
+    outline:none;
+    border: none;
+    font-size:20px;
+    justify-content:center;
+    align-items:center;
+    text-decoration:none;
+}
+
+
+
+
+
+
+
+
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background:black;
+}
+
+.loading-bar {
+  display: flex;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 0 5px;
+  animation: moveupdown  3.10s infinite;
+}
+.small {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 0 5px;
+  animation: moveUpDown 3.20s infinite;
+}
+
+.point {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 0 5px;
+  animation: moveUpDown 3.25s infinite;
+}
+
+.little {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 0 5px;
+  animation: moveUpDown 3.30s infinite;
+}
+.yen {
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    margin:0 5px;
+    animation:moveUpDown 3.35s infinite;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.green {
+  background-color: green;
+}
+
+.yellow {
+  background-color: orange;
+}
+.red {
+    background:red;
+}
+
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+
+@keyframes moveupdown {
+  0% {
+    transform: translateY(0);
+  }
+  0% {
+    transform: translateY(-10px);
+  }
+  70% {
+    transform: translateY(0);
+  }
+}
+
+
+
+
+
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  height: 100vh;
+  margin: 0;
+}
+
+.loading-container {
+  text-align: center;
+  position: fixed;
+  background:black;
+  width:100%;
+  height:100%;
+  color:white;
+  align-items:center;  
+}
+
+
+.relation {
+    margin-top:60%;
+    tex-align:center;
+    justify-item:center;
+    align-items:center;
+}
+.loading-animation {
+  width: 70px;
+  height: 70px;
+  border: 8px solid #000000;
+  border-top: 8px solid #3498db;
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+  margin: 30px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.percentage {
+  font-size: 24px;
+  font-weight: bold;
+  font-family:Thaoma;
+}
+
+.loading-text {
+  font-size: 18px;
+  margin-top: 10px;
+  color: #888;
+  font-family:Monaco;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+
+
+.video-carousel {
+  width: 100%;
+ 
+  overflow-y: scroll;
+  white-space: normal;
+}
+
+.video-container {
+  display: inline-block;
+  width: 320px; /* Set width of each video container */
+  margin-right: 2px; /* Set margin between video containers */
+  margin-top: 0px;
+}
+
+.video-container iframe {
+  width: 100%;
+  
+}
+
+
+
+header {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height:5.5%;
+  font-family:monospace;
+  background-color: #f2f2f2;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.chat-container {
+  position: relative;
+  overflow: hidden;
+  flex-grow: 1;
+  white-space: nowrap;
+}
+
+.chat-message {
+  margin-left:10%;
+  font-family:monospace;
+  animation: slideIn 5s forwards;
+}
+-
+@keyframes slideIn {
+  to {
+    left: 0%;
+  }
+}
+
+.chat-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  margin-right:10%;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+
+
+
+
+    #decline {
+        color:red;
+        margin-bottom:15%;
+        font-weight:bold;
+        font-family:monospace;
+    }
+#input-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width:100%;
+  background:#ffffff;
+}
+
+#number-input {
+  margin-bottom: 10px;
+  border:none;
+  outline:none;
+  width:70%;
+  border-bottom:2px solid #000000;
+  padding:5%;
+  
+}
+
+#submit-btn {
+    background:#ffc700;
+    width:70%;
+    color:white;
+    font-family:monospace;
+    padding:3%;
+    outline:none;
+    border:none;
+}

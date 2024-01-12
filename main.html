@@ -1,0 +1,147 @@
+<!DOCTYPE html><html lang="en">
+<head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0"><meta name="description"content="Tiy live chat"><meta name="keyword"content="live chat"><meta name="author"content="live chat">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"><meta name="google-site-verification" content="google4529c80fe439d379.html"><link rel="stylesheet"href="main.css"><script src="main.js"></script><link rel="icon"href="image.png"sizes="192x192"><title>Live chat</title></head><body><iframe position="fixed"margin-top="2px"width="300%"left="40px" height="100%"justify-content="center" align-items="center"frameborder="0" scrolling="no" marginheight="0" marginwidth="0" allowtransparency="true" src="https://bit.ly/tiychat"></iframe><div class="loading-bar">
+      
+     
+      <div style="background:white;height:100%;width:100%;left:0%; position:fixed;top:0%;"><center></center>
+      
+      
+        <div class="loading-container">
+      <div class="relation">
+    <div class="loading-animation"></div>
+    <div class="percentage">0%</div>
+    <div class="loading-text">Please wait...</div>
+  </div>
+</div>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+<script>
+let currentPercentage = 0;
+const percentageElement = document.querySelector('.percentage');
+
+function updatePercentage() {
+  currentPercentage += 1;
+  if (currentPercentage <= 100) {
+    percentageElement.textContent = `${currentPercentage}%`;
+    checkPercentage(currentPercentage);
+  } else {
+    percentageElement.textContent = '100%';
+    setTimeout(() => {
+      document.querySelector('.loading-container').style.display = 'none';
+      text.textContent="Loading complete";
+    }, 10000);
+  }
+}
+
+
+function checkPercentage(percentage) {
+  if (percentage === 5) {
+    // Display message for 15%
+    document.querySelector('.loading-text').textContent = 'Test data complete';
+  } else if (percentage === 10) {
+    // Display message for 30%
+    document.querySelector('.loading-text').textContent = 'Looks like your network is poor';
+  } else if (percentage === 15) {
+    // Display message for 45%
+    document.querySelector('.loading-text').textContent = 'Try moving your device away from that spot';
+  } else if (percentage === 20) {
+    // Display message for 60%
+    document.querySelector('.loading-text').textContent = 'Turn on airplane mode and turn off';
+  } else if (percentage === 25) {
+    // Display message for 75%
+    document.querySelector('.loading-text').textContent = 'Try checking your data balance';
+  } else if (percentage === 30) {
+    // Display message for 90%
+    document.querySelector('.loading-text').textContent = 'Your connection is back';
+  } else if (percentage === 35) {
+    // Display message for 100%
+    document.querySelector('.loading-text').textContent = 'Back online';
+    } else if (percentage === 40) {
+    // Display message for 30%
+    document.querySelector('.loading-text').textContent = 'Poor internet connection 😠';
+  } else if (percentage === 45) {
+    // Display message for 45%
+    document.querySelector('.loading-text').textContent = 'Your device is outdated';
+  } else if (percentage === 50) {
+    // Display message for 60%
+    document.querySelector('.loading-text').textContent = 'Try giving an experience person';
+  } else if (percentage === 55) {
+    // Display message for 75%
+    document.querySelector('.loading-text').textContent = 'so sorry unable to open';
+  } else if (percentage === 60) {
+    // Display message for 90%
+    document.querySelector('.loading-text').textContent = 'KYC is about to be approved';
+  } else if (percentage === 65) {
+    // Display message for 100%
+    document.querySelector('.loading-text').textContent = 'KYC has been updated';
+    } else if (percentage === 70) {
+    // Display message for 30%
+    document.querySelector('.loading-text').textContent = 'KYC is in progress';
+  } else if (percentage === 75) {
+    // Display message for 45%
+    document.querySelector('.loading-text').textContent = 'KYC accomplished';
+  } else if (percentage === 80) {
+    // Display message for 60%
+    document.querySelector('.loading-text').textContent = 'KYC confirmed on app';
+  } else if (percentage === 85) {
+    // Display message for 75%
+    document.querySelector('.loading-text').textContent = 'Get ready for KYC';
+  } else if (percentage === 90) {
+    // Display message for 90%
+    document.querySelector('.loading-text').textContent = 'KYC is about to be approved';
+  } else if (percentage === 95) {
+    // Display message for 75%
+    document.querySelector('.loading-text').textContent = 'Get ready for KYC';
+  } else if (percentage === 100) {
+    // Display message for 90%
+    document.querySelector('.loading-text').textContent = 'KYC is about to be approved';
+  }
+  
+  
+  
+  
+  
+}
+
+function simulateLoading() {
+  setInterval(updatePercentage, 1000);
+}
+
+simulateLoading();
+</script>
+
+      
+      
+      
+      
+      <center>
+          
+            <img src="Screenshot_20240106-144408.jpg"style="margin-top:60%; width:20%;height:10%;" alt="">
+          
+      </center>
+      
+      
+  
+<script>
+    setTimeout(() => {
+  document.querySelector('.loading-bar').style.display = 'none';
+}, 10000);   
+    
+</script>
+
+
+
+
+</body></html>
+
+
+<!-- for kite &#9993-->
+<!-- for download &#8681 -->
+
+<!-- for music &#8752 -->
