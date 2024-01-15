@@ -1,3 +1,8 @@
+#multiply-text {
+  position:fixed;left:8%;top:8%;color:orange;font-weight:bold;font-family:Tahoma;font-size:16px;
+}
+
+
 #layer {
     position:fixed;
     width:100%;
