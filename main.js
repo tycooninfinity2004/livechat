@@ -71,15 +71,15 @@ function checkLogin() {
 
 
 function  overlay() {
-document.getElementById('wait').innerHTML = 'Oops! no network, use free mode!';
+document.getElementById('wait').innerHTML = 'Oops! no network, please subscribe to internet data!';
 
 
-    window.location.href="home.html";
+    window.location.href="main.html";
 }
 
 
    function freemode() {
-    document.getElementById('wait').innerHTML = '!Takes time, refresh and click free mode again';
+    document.getElementById('wait').innerHTML = '!Takes time, refresh and click earnings again';
     
 const layer = document.getElementById('layer');
 

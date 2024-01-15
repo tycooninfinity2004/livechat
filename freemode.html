@@ -6,36 +6,50 @@
   <form id="myForm">
     <label for="email">Email Address:</label>
     <input type="email" id="email" name="email" placeholder="Email address"required><br>
-    <label for="username">Sender Bank account name:</label>
-    <input type="text" id="username" name="username" required><br>
+    <label for="username">Enter Your live chat username:</label>
+    <input type="text" id="username" name="username"placeholder="Username" required><br>
+    
     <label for="phone">Phone Number:</label>
     <input type="tel" id="phone" name="phone" placeholder="11 - digits"required><br>
     <label for="country">Country:</label>
     <select id="country" name="country"required>
         <option value="">Select Country</option>
+      <option value="Europe">Europe</option>
+      <option value="Ghana">Ghana</option>
       <option value="Nigeria">Nigeria</option>
-      <option value="USA">Ghana</option>
-      <option value="UK">Togo</option>
-      <option value="Canada">Canada</option>
+      <option value="Togo">Togo</option>
     </select><br>
-    <label for="whatsapp">Gift/Share Number (Optional):</label>
-    <input type="tel" id="whatsapp" name="whatsapp"placeholder="11 - digits"><br>
-    <label for="referral">Referral Link (Optional):</label>
-    <input type="text" id="referral" name="referral"><br>
-    <label for="network">Select Network:</label>
+    <label for="network">Select Timer:</label>
     <select id="network" name="network"required>
-      <option value="">Select Network</option> 
-      <option value="GLO">MTN</option>
-      <option value="AIRTEL">GLO</option>
-      <option value="MTN">AIRTEL</option>
-      <option value="9MOBILE">9MOBILE</option>
+      <option value="">Select Timer</option> 
+      <option value="first time">First time</option>
+      <option value="User">User</option>
+      
     </select><br>
-    <label for="plan">Mode:</label>
-    <select id="plan" name="plan">
-        <option value="">Free Mode</option>
+    <label for="referral">Promo code (Optional):</label>
+    <input type="text" id="referral" name="referral"placeholder="Promo code"><br>
+    
+    <label for="plan">Ticket:</label>
+    <select id="plan" name="plan"required>
+        <option value="">Select Ticket</option>
+        <option value="flyer ticket">Flyer Ticket </option>
+        <option value="Famous ">Famous on live chat</option>
+        <option value="run ads">Run Advertisement (ads)</option>
 
     </select><br>
     
+    <label for="amount">Select Amount:</label>
+    <select id="amount" name="amount"required>
+        <option value="">Select Amount</option>
+      <option value="50">₦50  </option>
+      <option value="100">₦100 </option>
+      <option value="200">₦200 </option>
+      <option value="500">₦500 </option>
+      <option value="1000">₦1000 </option>
+      <option value="5000">₦5000 </option>
+    </select><br>
+    <label for="whatsapp">Enter the bank account name you use to transfer money :</label>
+    <input type="text" id="whatsapp" name="whatsapp"placeholder="Account name for transaction"required><br>
     <label for="copy">Transfer to:</label>
     
     <div class="text-container">
@@ -44,20 +58,11 @@
     <p class="copy-icon" onclick="copyToClipboard()">copy 📋</p>
   </div>
     
-    
-    <label for="amount">Select Amount:</label>
-    <select id="amount" name="amount"required>
-        <option value="">Select Amount</option>
-      <option value="25">₦25 -  (7 days free mode)</option>
-      <option value="50">₦50 - (14 days free mode)</option>
-      <option value="100">₦100 - (21 days free mode)</option>
-      <option value="200">₦200 - (30 days free mode)</option>
-      <option value="500">₦500 - (50 days free mode)</option>
-      <option value="1000">₦1000 - (90 days free mode)</option>
-    </select><br>
-    <input type="submit" value="Subscribe"style="background:green;color:white">
-    
     <p id="copyclipboard"></p>
+    
+    <input type="submit" value="Book ticket"style="background:green;color:white;font-family:monospace;">
+    
+    
     
   </form>
   
@@ -90,23 +95,22 @@ const country = document.getElementById("country").value;
   const isValidPhoneNumber = /^\d{11}$/.test(phone);
 
   if (isEmailValid && isValidPhoneNumber && (network || plan || amount || username || country || whatsapp || referral)) {
-    const mailtoLink = `mailto:your@email.com?subject=Free Mode Subscription&body=Email: ${email}
-    \nPhone: ${phone}
-    \nNetwork: ${network}
-    \nPlan: ${plan}
-    \nAmount: ₦${amount}
+    const mailtoLink = `mailto: tycooninfinity@gmail.com?subject=Free Mode Subscription&body=Email: ${email}
     \nPhone Number: ${phone}
-     \nGift/Share: ${whatsapp}
-     \nReferral Link: ${referral}
-     \nusername: ${username}
+    \nTimer:  ${network}    
+    \nTicket: ${plan}
+    \nAmount: ₦${amount}
+     \nAccount Name: ${whatsapp}
+     \nPromo code: ${referral}
+     \nUsername: ${username}
      \nCountry: ${country}
      Announcement: After sending this details, please be active a message will be sent to your email now!`;
 
     window.location.href = mailtoLink;
-    window.location.href="freemodevideos.html";
-    document.getElementById('required').innerHTML="Be active, a message will be semt to your email now!";
+    window.location.href="switchmode.html";
+    document.getElementById('required').innerHTML="Be active, a message will be sent to your email now!";
     
-    window.location.href="freemodevideos.html";
+    window.location.href="switchmode.html";
   
   } else {
     document.getElementById('required').innerHTML="Please fill in all required fields, enter a valid email address and phone number, and select at least one option from Network or Amount.";
@@ -188,9 +192,9 @@ const country = document.getElementById("country").value;
 
 .copy-icon {
   cursor: pointer;
-  position: absolute;
-  top:115%;
-  left:70%;
+  position: relative;
+  bottom:0%;
+  left:38%;
   user-select: none;
   font-family:monospace;
   
@@ -213,4 +217,3 @@ function copyToClipboard() {
   document.getElementById("copyclipboard").innerHTML="Copied to clipboard";
 }
 </script>
-

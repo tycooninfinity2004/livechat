@@ -22,37 +22,6 @@
 a {
     text-decoration:none;
 }
-#header {
-    position:fixed;
-    bottom:0%;
-    width:100%;
-    height:7%;
-    background:green;
-    left:0%;
-}
-#home {
-    position:fixed;
-    left:10%;
-    font-size:25px;
-    bottom:1%;
-}
-#message {
-    position:fixed;
-    left:45%;
-    bottom:1%;
-    font-size:25px;
-    
-}
-#payment {
-    position:fixed;
-    left:80%;
-    bottom:1%;
-    font-size:25px;
-}
-
-
-
-
 
 
 
@@ -119,7 +88,7 @@ a {
     font-family:monospace;
     color:#001781;
     font-weight:bold;
-    font-size:15px;
+    font-size:12px;
 }
 a {
     text-decoration:none;
@@ -132,7 +101,7 @@ a {
     height:20px;
     outline:none;
     border: none;
-    font-size:20px;
+    font-size:12.5px;
     justify-content:center;
     align-items:center;
     text-decoration:none;
@@ -300,106 +269,3 @@ body {
 
 
 
-.video-carousel {
-  width: 100%;
- 
-  overflow-y: scroll;
-  white-space: normal;
-}
-
-.video-container {
-  display: inline-block;
-  width: 320px; /* Set width of each video container */
-  margin-right: 2px; /* Set margin between video containers */
-  margin-top: 0px;
-}
-
-.video-container iframe {
-  width: 100%;
-  
-}
-
-
-
-header {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height:5.5%;
-  font-family:monospace;
-  background-color: #f2f2f2;
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-}
-
-.chat-container {
-  position: relative;
-  overflow: hidden;
-  flex-grow: 1;
-  white-space: nowrap;
-}
-
-.chat-message {
-  margin-left:10%;
-  font-family:monospace;
-  animation: slideIn 5s forwards;
-}
--
-@keyframes slideIn {
-  to {
-    left: 0%;
-  }
-}
-
-.chat-button {
-  background-color: #007bff;
-  color: #fff;
-  padding: 10px 20px;
-  margin-right:10%;
-  text-decoration: none;
-  border-radius: 5px;
-}
-
-
-
-
-
-    #decline {
-        color:red;
-        margin-bottom:15%;
-        font-weight:bold;
-        font-family:monospace;
-    }
-#input-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  width:100%;
-  background:#ffffff;
-}
-
-#number-input {
-  margin-bottom: 10px;
-  border:none;
-  outline:none;
-  width:70%;
-  border-bottom:2px solid #000000;
-  padding:5%;
-  
-}
-
-#submit-btn {
-    background:#ffc700;
-    width:70%;
-    color:white;
-    font-family:monospace;
-    padding:3%;
-    outline:none;
-    border:none;
-}

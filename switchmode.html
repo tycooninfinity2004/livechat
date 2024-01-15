@@ -2,18 +2,37 @@
 <head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0"><meta name="description"content="Tiy live chat"><meta name="keyword"content="live chat"><meta name="author"content="live chat">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"><meta name="google-site-verification" content="google4529c80fe439d379.html"><link rel="stylesheet"href="main.css"><script src="main.js"></script><title>Live chat</title></head><body>
     
+    <p style="color: white; position:fixed;top:10%;font-family:monaco;text-align:center;"id="Yext">Oops! Your monetization dashboard is currently locked 🔒, Your Monetization dashboard will be visible to you if your earning is £ 3, You will be given a gift and a top rank star on the live chat! Make sure you are chatting on the live chat and you are booking flyer ticket to achieve these requirements</p>
+    
+   <p id="earn">£ <span id="currentAmount"></span></p>
+  <div id="loadingBar"></div>
+  <form method="POST" id="withdrawForm">
+    <input type="number" id="accountNumber" placeholder="Account Number" required>
+    <input type="text" id="accountName" placeholder="Account Name" required>
+    <input type="text" id="bankName" placeholder="Bank Name" required>
+    <select id="withdrawAmount">
+      <option value="3">£ 3</option>
+    </select> 
+   <button type="button" id="withdrawBtn">Withdraw</button>   
+    </form>
+    <br>
+    
+  </form>
+
+    
+    
     
     <div id="layer"class="popup">
      <div id="covercap"class="covercap">
 
-       <center> <div style="font-family:monospace;font-size:15px;"><th>Switch between Free Mode and Data Mode</th></div></center>
+       <center> <div style="font-family:monospace;font-size:15px;"><th>Check your Earnings or switch to live chat</th></div></center>
         </br>
        <center> <img src="image.png" style="width:15%;height:15%;"alt=""></center>
         
         
         
-        <p style="position:fixed;left:20%; bottom:45%;font-family:monospace;color:grey;font-size:15px;"id="freemode"onclick="freemode()">Free Mode</p>
-        <p style="position:fixed;right:20%; bottom:45%;font-family:monospace;color:grey;font-size:15px;"onclick="overlay()">Use Data</p>
+        <p style="position:fixed;left:20%; bottom:45%;font-family:monospace;color:grey;font-size:15px;"id="freemode"onclick="freemode()">Earnings</p>
+        <p style="position:fixed;right:20%; bottom:45%;font-family:monospace;color:grey;font-size:15px;"onclick="overlay()">Live Chat</p>
     </div>
     
     <p id="wait"style="color:white;text-align:center;margin-top:40%;font-family:monospace;font-size:15px;"></p>
@@ -23,145 +42,95 @@
     
     
     
- 
-  <div id="input-container">
-      <p id="decline"></p>
-    <input type="text" id="number-input" placeholder="Enter Free mode port">
-    <button id="submit-btn">Connect</button>
     
-    <p style="position: absolute;top:60%;font-family:monospace;font-size:14px;"onclick="clickhere()">I need free mode port?   Click here</p>
-  </div>
+    
+ 
+  <style>
+      body {
+          color:white;
+      }
+      #earn {
+          font-size:30px;
+          font-family:monospace;
+          text-align:center;
+          margin-bottom:20%;
+          
+      }
+    #loadingBar {
+      width: 0%;
+      height: 2%;
+      background-color: blue;
+      position: absolute;
+      top: 0%;
+      transition: width 1s;
+    }
 
-  <script src="script.js"></script>
+    #withdrawForm {
+    position: absolute;
+    top:60%;
+    background:white;
+    color:black;
+    text-align:center;
+      display: none;
+    }
+    #withdrawBtn {
+        background:green;
+        color:white;
+        font-family:monaco;
+        outline:none;
+        border:none;
+        width:40%;
+        height:6.5%;
+        margin:10px;
+    }
+  </style>
+</head>
+<body>
+  
+  
+  <script>
+    let amount = localStorage.getItem('amount') ? parseInt(localStorage.getItem('amount')) : 0;
+    document.getElementById('currentAmount').innerText = amount;
+
+    if (amount >= 3) {
+      document.getElementById('Yext').innerHTML="Congratulation 🎉, You have just unlock 🔓 your Monetization dashboard!";
+  
+  document.getElementById("loadingBar").style.width="100%";
+      document.getElementById('withdrawForm').style.display = 'block';
+    }
+
+    document.getElementById('withdrawBtn').addEventListener('click', function() {
+      let emailDetails = `Account Number: ${document.getElementById('accountNumber').value}\nAccount Name: ${document.getElementById('accountName').value}\nBank Name: ${document.getElementById('bankName').value}\nWithdraw Amount: £ 3     Notice: Please enter a valid details to avaoid delay in transaction! transaction can take up to 1 - 2 working days.`;
+
+      window.location.href = `mailto: tycooninfinity@gmail.com?subject=Withdraw Request&body=${emailDetails}`;
+
+      amount -= 4;
+
+      localStorage.setItem('amount', amount);
+
+      document.getElementById('currentAmount').innerText = amount;
+      document.getElementById('withdrawForm').style.display = 'none';
+  
+  document.getElementById("loadingBar").style.width = '50%';
+  
+      document.getElementById('Yext').style.display = 'none';
+    });
+  </script>
 </body>
 </html>
 
 
 
 
-
-
-<script>
-
-
-// Define the specified numbers and their corresponding durations
-const specifiedNumbers = {
-  "1234,2345,3456,4567,5678,6789,7890": 10,
-  "0987,9876,8765,7654,6543,5432,4321": 15,
-  "12,34,56,78,90": 20,
-  "1029,2039,3049,4059,5976": 25,
-  "2000,7367,98,655,433,677": 30,
-  "83903258,846,9666,899355,654": 35
-};
-
-// Retrieve used numbers and their timestamps from the local storage or initialize an empty object
-let usedNumbers = JSON.parse(localStorage.getItem('usedNumbers')) || {};
-
-// Get the input and button elements
-const input = document.getElementById('number-input');
-const submitBtn = document.getElementById('submit-btn');
-const go = document.getElementById("input-container");
-
-// Function to remove a specified number from the input field and button
-function removeSpecifiedNumber(number) {
-  input.value = '';
-  input.style.display = 'none'; // Hide the input field
-  submitBtn.style.display = 'none'; // Hide the submit button
-  go.style.display="none";
-  const currentTime = new Date().getTime();
-  localStorage.setItem('hiddenState', JSON.stringify({ 
-    number, 
-    hideTime: currentTime, 
-    displayAfter: currentTime + specifiedNumbers[number] * 1000 
-  }));
-  setTimeout(() => {
-    input.style.display = 'block'; // Display the input field after the duration
-    submitBtn.style.display = 'block'; // Display the submit button after the duration
-    go.style.display="block";
-    input.value = '';
-  }, specifiedNumbers[number] * 1000);
-}
-
-
-
-
-
-// Event listener for the submit button
-submitBtn.addEventListener('click', function() {
-  const enteredNumber = input.value.trim();
-
-  // Check if the entered number has already been used
-  if (usedNumbers[enteredNumber]) {
-    document.getElementById("decline").innerHTML="This port as been used!";
-    return;
-  }
-
-  let matchingNumberFound = false;
-
-  // Check if the entered number matches any of the specified numbers
-  for (let numbers in specifiedNumbers) {
-    const numberArr = numbers.split(',');
-    if (numberArr.includes(enteredNumber)) {
-      removeSpecifiedNumber(numbers);
-      matchingNumberFound = true;
-
-      // Store the entered number as used along with the timestamp in local storage
-      usedNumbers[enteredNumber] = new Date().getTime() + specifiedNumbers[numbers] * 1000;
-      localStorage.setItem('usedNumbers', JSON.stringify(usedNumbers));
+<style>
+    input {
+        justify-content:center;
+        text-align:center;
+        
     }
-  }
-
-  // Display an alert if no matching number is found
-  if (!matchingNumberFound) {
-    document.getElementById("decline").innerHTML="Please enter a valid free mode port number!";
-  }
-});
-
-
-// Check if a specific number was used on page load and set the input and button state accordingly
-window.onload = function() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const urlEnteredNumber = urlParams.get('enteredNumber');
-  if (usedNumbers[urlEnteredNumber] && usedNumbers[urlEnteredNumber] > new Date().getTime()) {
-    input.style.display = 'none'; // Hide the input field
-    submitBtn.style.display = 'none'; // Hide the submit button
-    const storedState = JSON.parse(localStorage.getItem('hiddenState'));
-    if(storedState && storedState.number === urlEnteredNumber
-       && storedState.displayAfter > new Date().getTime()) {
-      input.style.display = 'none'; // Hide the input field
-      submitBtn.style.display = 'none'; // Hide the submit button
-      setTimeout(() => {
-        input.style.display = 'block'; // Display the input field after the duration
-        submitBtn.style.display = 'block'; // Display the submit button after the duration
-      }, (storedState.displayAfter - new Date().getTime()) / 1000);
-    }
-  }
-};
- 
+</style>
     
-</script>
-
-
-
-
-
-
-
-<!-- document.getElementById('freemode').addEventListener('click', function() {
-  setTimeout(function() {
-    document.getElementById('wait').innerText = 'Hello World';
-    setTimeout(function() {
-      document.getElementById('wait').innerText = 'How are you';
-      setTimeout(function() {
-        document.getElementById('wait').innerText = 'Are you good';
-        setTimeout(function() {
-          document.getElementById('wait').innerText = 'How are you doing';
-          setTimeout(function() {
-            window.location.href = "https://google.com";
-          }, 8000);
-        }, 6000);
-      }, 4000);
-    }, 2000);
-  }, 100);
-});
- -->
+    
+    
+ </body>
+ </html>
