@@ -1,0 +1,76 @@
+
+    body {
+        background:#ffc700;
+    }
+    .popup {
+  background-color:#ffc700;
+  color: black;
+  padding: 20px;
+  width:80%;
+  justify-content: center;
+  align-items:center; 
+  border-radius: 5px;
+  font-family:monospace;
+}
+
+.popup input, .popup select, .popup button {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline:none;
+  border:none;
+  font-family: monospce;
+}
+
+.popup button {
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  font-family:monospace;
+  outline:none;
+  border:none;
+}
+
+.popup button:hover {
+  background-color: #45a049;
+  outline:none;
+  border:none;
+}
+
+.popup button:active {
+  background-color: #3e8e41;
+  outline:none;
+  border:none;
+}    
+    
+
+#copyclipboard {
+    position:fixed;
+    bottom:1%;
+    box-shadow:0 10px 10px #333333;
+    font-family:monospace;
+    font-weight:bold;
+    font-size:15px;
+    text-align:center;
+    left:25%;
+}
+
+.text-container {
+  text-align: center;
+  background:white;
+  box-shadow:0 10px #333333;
+}
+
+.copy-icon {
+  cursor: pointer;
+  position: relative;
+  bottom:0%;
+  left:38%;
+  user-select: none;
+  font-family:monospace;
+  
+}
+
+

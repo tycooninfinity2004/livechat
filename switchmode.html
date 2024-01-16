@@ -31,63 +31,14 @@
         
         
         
-        <p style="position:fixed;left:20%; bottom:45%;font-family:monospace;color:grey;font-size:15px;"id="freemode"onclick="freemode()">Earnings</p>
-        <p style="position:fixed;right:20%; bottom:45%;font-family:monospace;color:grey;font-size:15px;"onclick="overlay()">Live Chat</p>
+        <p id="freemode"onclick="freemode()">Earnings</p>
+        <p id="overlay"onclick="overlay()">Live Chat</p>
     </div>
     
-    <p id="wait"style="color:white;text-align:center;margin-top:40%;font-family:monospace;font-size:15px;"></p>
+    <p id="wait"></p>
     
 </div>
 
-    
-    
-    
-    
-    
- 
-  <style>
-      body {
-          color:white;
-      }
-      #earn {
-          font-size:30px;
-          font-family:monospace;
-          text-align:center;
-          margin-bottom:20%;
-          
-      }
-    #loadingBar {
-      width: 0%;
-      height: 2%;
-      background-color: blue;
-      position: absolute;
-      top: 0%;
-      transition: width 1s;
-    }
-
-    #withdrawForm {
-    position: absolute;
-    top:60%;
-    background:white;
-    color:black;
-    text-align:center;
-      display: none;
-    }
-    #withdrawBtn {
-        background:green;
-        color:white;
-        font-family:monaco;
-        outline:none;
-        border:none;
-        width:40%;
-        height:6.5%;
-        margin:10px;
-    }
-  </style>
-</head>
-<body>
-  
-  
   <script>
     let amount = localStorage.getItem('amount') ? parseInt(localStorage.getItem('amount')) : 0;
     document.getElementById('currentAmount').innerText = amount;
@@ -116,13 +67,8 @@
       document.getElementById('Yext').style.display = 'none';
     });
   </script>
-</body>
-</html>
-
-
-
-
-<style>
+  
+  <style>
     input {
         justify-content:center;
         text-align:center;

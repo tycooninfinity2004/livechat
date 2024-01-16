@@ -91,3 +91,56 @@ layer.style.display="none";
 function clickhere() {
     window.location.href="freemode.html";
 }
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  var progressBar = document.getElementById('progress-bar');
+  var multiplyText = document.getElementById('multiply-text');
+ 
+  var redirectButton = document.getElementById('increaseBtn');
+  
+  var progress = 0;
+  var interval = setInterval(function() {
+    if (progress < 100) {
+      progress++;
+      progressBar.style.width = progress + '%';
+      multiplyText.innerText ='X    ' + (progress/5);
+    } else {
+      clearInterval(interval);
+      redirectButton.style.display = 'block';
+    }
+  }, 800);
+  
+  redirectButton.addEventListener('click', function() {
+    redirectButton.style.display="none";
+    
+    document.getElementById("pls").innerHTML="Wait for another withdraw...";    
+    
+    setTimeout(function() {
+    document.getElementById('increaseBtn').style.display="block";
+  }, 60000);
+    
+    
+  });  
+});
+
+
+
+
+function copyToClipboard() {
+  const text1 = document.getElementById('text1').innerText;
+  const text2 = document.getElementById('text2').innerText;
+
+  const dummy = document.createElement('textarea');
+  document.body.appendChild(dummy);
+  dummy.value = text1 + '\n' + text2;
+  dummy.select();
+  document.execCommand('copy');
+  document.body.removeChild(dummy);
+
+  document.getElementById("copyclipboard").innerHTML="Copied to clipboard";
+}
+
+
+
